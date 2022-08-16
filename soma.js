@@ -1,5 +1,5 @@
-function sum(n1, n2) {
-    return n1+n2;    
+function multi(n1, n2) {
+    return n1*n2;    
 }
 
-module.exports = sum;
+module.exports = multi;
