@@ -1,5 +1,5 @@
-const Soma = require('./soma');
+const Multi = require('./soma');
 
-test("test soma between two numbers", () => {
-    expect(Soma(3,2)).toBe(5);
+test("test multi between two numbers", () => {
+    expect(Multi(3,2)).toBe(6);
 });
