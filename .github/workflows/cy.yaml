@@ -1,6 +1,6 @@
 name: ci-node-workflow
 on: 
-  push_request:
+  pull_request:
   branches:
     - develop
 jobs:
