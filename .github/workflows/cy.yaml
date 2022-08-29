@@ -6,23 +6,13 @@ on:
 jobs:
   check-application:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        version: [14, 16]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.version }}
       - run: npm ci
       - run: npm test
-
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v2
-    
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Build and push
-        id: docker_build
-        uses: docker/build-push-action@v2
-        with:
-          push: false
-          tags: dernando/node-ci:latest
